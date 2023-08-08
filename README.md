@@ -23,7 +23,7 @@
 
 ### 通知方式：
 * email
-* 即時通訊
+* 即時通訊（如 [Signal](https://blog.healthchecks.io/2023/01/how-healthchecks-sends-signal-notifications/)）
 * 簡訊
 * 電話語音
 * 其它（支援以 API 串接）
