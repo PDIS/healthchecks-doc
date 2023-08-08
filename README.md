@@ -1,7 +1,7 @@
 # healthchecks
 
 ### 主機規格需求
-* 主機：一台 LB （或使用 LB 服務替代），至少三台 8G RAM，4vCPU，200GB Disk 主機。
+* 主機：一台 LB （或使用 LB 服務替代），至少三台 8G RAM，4vCPU，200GB Disk 主機。（[進階參考](https://blog.healthchecks.io/2022/02/healthchecks-io-hosting-setup-2022-edition/)）
 * 穩定
 * 網路順暢
 
