@@ -19,6 +19,7 @@
 * 監測是否有正確收到 email
 * 監測 build、部署等步驟是否正確執行
 * 引用 healthchecks 的 badge 在頁面上呈現服務健康狀態（[說明](https://healthchecks.io/docs/badges/)）
+* 監測硬碟空間等主機概況（[說明](https://blog.healthchecks.io/2023/05/monitor-disk-space-on-servers-without-installing-monitoring-agents/)）
 
 ### 通知方式：
 * email
