@@ -1,11 +1,11 @@
 # healthchecks
 
-### 主機規格需求
+### 主機規格需求（由中央架設，機關單位無需準備）
 * 主機：一台 LB （或使用 LB 服務替代），至少三台 8G RAM，4vCPU，200GB Disk 主機。（[進階參考](https://blog.healthchecks.io/2022/02/healthchecks-io-hosting-setup-2022-edition/)）
 * 穩定
 * 網路順暢
 
-### 使用單位需準備項目
+### 使用機關需準備項目
 
 * 技術上，healthcheck 使用 HTTP GET 作為健康回報方式，在不同情境下可使用不同的方式回報。比如在 cronjob 可使用 curl 進行回報，在 C#.NET 中[使用 System.Net.Http.HttpClient 回報](https://healthchecks.io/docs/csharp/)。因此，確保網路能外連 `<healthcheck 平台網址>` 並有適當的 HTTP client 工具即可。在規劃回報方式時，建議[一併規劃 timeout 及 retry 機制](https://healthchecks.io/docs/reliability_tips/)，並考慮進行非同步回報，避免回報的 HTTP 請求阻礙使用流程的進行。
 * 需求面，建議預先規劃「監測目的」，擬定「需要監測的項目」。比如監測目的為「知道備份有沒有成功」，則監測項目即可在「備份排程工作開始及結束時進行回報」。更進階的例子，若期望監測「關鍵使用路徑」順暢程度，建議定義好各步驟（A -> B -> C），規劃每個步驟要如何插入非同步回報機制，規劃要如何[監測各步驟時間](https://healthchecks.io/docs/measuring_script_run_time/)等。
