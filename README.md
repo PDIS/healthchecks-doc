@@ -1,5 +1,17 @@
 # healthchecks
 
+### 簡介
+
+healthcheck(s).io 是一個彈性的監測工具，它可以在發生錯誤時以指定的方式通知管理者，並且也提供 web based 的 dashboard 及 API。
+
+使用方式：
+1. 管理者建立一組 check，系統會產生一個專屬的「回報網址」。每組 check 也代表一個「預期」，比如設定這組網址預期每 10 分鐘有一次回報（ping），如果超過十分鐘沒有回報，則通知錯誤。
+2. 接著管理者可用任何方式戳這組回報網址。一個簡單的範例是： `curl https://example.com && curl https://回報網址` ，前者成功才會執行後者。 讓它每十分鐘執行一次。
+
+它也有一些進階用法，比如：
+1. 先戳 https://回報網址/start ，然後進行某工作，再戳 https://回報網址，就可以紀錄開始、結束時間
+2. 直接戳 https://回報網址/fail 就可直接觸發錯誤
+
 ### 主機規格需求（由中央架設，機關單位無需準備）
 * 主機：一台 LB （或使用 LB 服務替代），至少三台 8G RAM，4vCPU，200GB Disk 主機。（[進階參考](https://blog.healthchecks.io/2022/02/healthchecks-io-hosting-setup-2022-edition/)）
 * 穩定
