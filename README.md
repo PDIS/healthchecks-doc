@@ -12,10 +12,6 @@ healthcheck(s).io 是一個彈性的監測工具，它可以在發生錯誤時�
 1. 先戳 https://回報網址/start ，然後進行某工作，再戳 https://回報網址 ，就可以紀錄開始、結束時間
 2. 直接戳 https://回報網址/fail 就可直接觸發錯誤
 
-### 主機規格需求（由中央架設，機關單位無需準備）
-* 主機：一台 LB （或使用 LB 服務替代），至少三台 8G RAM，4vCPU，200GB Disk 主機。（[進階參考](https://blog.healthchecks.io/2022/02/healthchecks-io-hosting-setup-2022-edition/)）
-* 穩定
-* 網路順暢
 
 ### 使用機關需準備項目
 
