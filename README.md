@@ -10,7 +10,21 @@ healthcheck(s).io 是一個彈性的監測工具，它可以在發生錯誤時�
 
 它也有一些進階用法，比如：
 1. 先戳 https://回報網址/start ，然後進行某工作，再戳 https://回報網址 ，就可以紀錄開始、結束時間
-2. 直接戳 https://回報網址/fail 就可直接觸發錯誤
+```
+#!/bin/sh
+
+RID=`uuidgen`
+
+# 開始工作前，先進行 /start 回報 
+curl -fsS -m 10 --retry 5 https://<回報網址>/start?rid=$RID
+
+# 進行主要工作，例如執行 ./backup.sh
+./backup.sh
+
+# 結束工作後，進行回報
+curl -fsS -m 10 --retry 5 https://<回報網址>?rid=$RID
+```
+2. 若直接戳 https://回報網址/fail 則可直接觸發錯誤
 
 
 ### 使用機關需準備項目
